@@ -6,30 +6,17 @@
  */
 
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {StyleSheet, Text, View} from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-
-
+import Hello from './pages/Hello';
+import RootNavigator from './src/RootNavigator';
 
 function App(): React.JSX.Element {
-
-
   return (
-    <View>
-      <Text>Hello React Native</Text>
-    </View>
+    <NavigationContainer>
+        <RootNavigator/>
+    </NavigationContainer>
   );
 }
 
@@ -53,3 +40,29 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
+// import React from 'react';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createStackNavigator } from '@react-navigation/stack';
+// import ViewStudents from './pages/ViewStudent';
+// import AddStudent from './pages/AddStudent';
+
+// type RootStackParamList = {
+//   ViewStudents: undefined;
+//   AddStudent: undefined;
+// };
+
+// const Stack = createStackNavigator<RootStackParamList>();
+
+// const App: React.FC = () => {
+//   return (
+//     <NavigationContainer>
+//       <Stack.Navigator>
+//         <Stack.Screen name="ViewStudents" component={ViewStudents} />
+//         <Stack.Screen name="AddStudent" component={AddStudent} />
+//       </Stack.Navigator>
+//     </NavigationContainer>
+//   );
+// };
+
+// export default App;
